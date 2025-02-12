@@ -15,7 +15,7 @@ const server = http.createServer(app);
 // CORS configuration for HTTP requests
 app.use(
   cors({
-    origin: ["http://192.168.1.102:3000", "https://swissmotefrontend-git-main-rohit-chaudharys-projects-a08c6dbc.vercel.app"], // Allow your frontend to access the server
+    origin: [process.env.ORIGIN_2], // Allow your frontend to access the server
     methods: ["GET", "POST"],
   })
 );
