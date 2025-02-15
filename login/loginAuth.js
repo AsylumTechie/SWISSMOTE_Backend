@@ -1,11 +1,10 @@
 const express = require("express");
-const router = express.Router(); // Create a new router
+const router = express.Router();
 
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const User = require("../models/user"); // Correct path to your User model
+const User = require("../models/user"); 
 
-// Login a user
 router.post("/login", async (req, res) => {
 
   const { email, password } = req.body;
@@ -21,7 +20,6 @@ router.post("/login", async (req, res) => {
       return res.status(400).json({ message: "Invalid password" });
     }
 
-    // In your login route
     const token = jwt.sign(
       { id: user._id, username: user.username }, 
       "JWT_SECRET",
@@ -35,5 +33,4 @@ router.post("/login", async (req, res) => {
   }
 });
 
-// Export the router
 module.exports = router;

@@ -34,13 +34,13 @@ const eventSchema = new mongoose.Schema({
     required: true,
   },
   attendees: {
-    type: [String], // This ensures it’s an array of user IDs
+    type: [String], 
     default: [],
   },
   userId: {
-    type: mongoose.Schema.Types.ObjectId, // Assuming userId is a reference to the User collection
+    type: mongoose.Schema.Types.ObjectId, 
     ref: 'User',
-    required: true, // Make sure it's required if your business logic needs it
+    required: true, 
   },
 });
 
